@@ -1,0 +1,27 @@
+[Input Source]
+    |
+    v
+[Frame Extraction]
+    |
+    |------------------> [YOLO Model] ---> [Object Detections]
+    |                                           |
+    |------------------> [OCR Model] ---> [Text Detections]
+    |                         |
+    |                         v
+    |                  [BERT Model] ---> [Improved Text Detections]
+    |                                           |
+    |                                           |
+    |                                           v
+    |                                   [Product Matcher]
+    |                                           |
+    |                                           v
+    |                                   [Database Lookup]
+    |                                           |
+    |                                           v
+    |                               [Confidence Calculation]
+    |                                           |
+    |                                           v
+    |                           [Final Product Identification]
+    |                                           |
+    v                                           |
+[Display Results] <----------------------------
