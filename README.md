@@ -111,4 +111,9 @@ Graph Description:
     v                                           |
 [Display Results] <----------------------------
 
-![graph](https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e)<svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="0 0 324.265625 821" style="max-width: 840px; background-color: white; max-height: 840px;" class="flowchart" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="my-svg">
+## Graph Description:
+
+![Graph](https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e)
+
+<!-- Resize the image using HTML -->
+<img src="https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e" alt="graph" width="400"/>
