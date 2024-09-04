@@ -83,4 +83,6 @@ python main.py
 
 
 Graph 
+
+
 <img src="https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e" alt="graph" width="400"/>
