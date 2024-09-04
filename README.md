@@ -82,31 +82,5 @@ python main.py
 - Develop a user interface for easier operation
 
 
-Graph Description:
-[Input Source]
-    |
-    v
-[Frame Extraction]
-    |
-    |------------------> [YOLO Model] ---> [Object Detections]
-    |                                           |
-    |------------------> [OCR Model] ---> [Text Detections]
-    |                         |
-    |                         v
-    |                  [BERT Model] ---> [Improved Text Detections]
-    |                                           |
-    |                                           |
-    |                                           v
-    |                                   [Product Matcher]
-    |                                           |
-    |                                           v
-    |                                   [Database Lookup]
-    |                                           |
-    |                                           v
-    |                               [Confidence Calculation]
-    |                                           |
-    |                                           v
-    |                           [Final Product Identification]
-    |                                           |
-    v                                           |
-[Display Results] <----------------------------
+Graph 
+<img src="https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e" alt="graph" width="400"/>
