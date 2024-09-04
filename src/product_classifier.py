@@ -1,18 +1,47 @@
-#src/product_classifier.py
 import sqlite3
 import os
 import re
 import logging
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
 
 class ProductClassifier:
-    def __init__(self):
-        db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'product_database.db')
-        if not os.path.exists(db_path):
-            logging.error(f"Database file not found: {db_path}")
+    def __init__(self, db_path, use_vector_db=False):
+        self.db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'product_database.db')
+        if not os.path.exists(self.db_path):
+            logging.error(f"Database file not found: {self.db_path}")
             self.conn = None
-            return
-        self.conn = sqlite3.connect(db_path)
-        self.cursor = self.conn.cursor()
+        else:
+            self.conn = sqlite3.connect(self.db_path)
+            self.cursor = self.conn.cursor()
+
+        self.use_vector_db = use_vector_db
+        if use_vector_db:
+            self.vector_db = self.initialize_vector_db()
+
+    def initialize_vector_db(self):
+        products = self.load_products()
+        model = SentenceTransformer('distilbert-base-nli-mean-tokens')
+        embeddings = model.encode([f"{p['brand']} {p['flavor']}" for p in products])
+
+        dimension = embeddings.shape[1]
+        index = faiss.IndexFlatL2(dimension)
+        index.add(embeddings.astype('float32'))
+
+        return {
+            'index': index,
+            'products': products,
+            'model': model
+        }
+
+    def load_products(self):
+        self.cursor.execute("""
+            SELECT b.name as brand, f.name as flavor
+            FROM brands b
+            JOIN flavors f ON f.brand_id = b.id
+        """)
+        return [{'brand': row[0], 'flavor': row[1]} for row in self.cursor.fetchall()]
 
     def classify(self, ocr_text):
         if not self.conn:
@@ -20,6 +49,21 @@ class ProductClassifier:
 
         ocr_text = ocr_text.lower()
 
+        if self.use_vector_db:
+            return self.vector_db_classify(ocr_text)
+        else:
+            return self.sql_classify(ocr_text)
+
+    def vector_db_classify(self, ocr_text):
+        query_vector = self.vector_db['model'].encode([ocr_text])
+        distances, indices = self.vector_db['index'].search(query_vector.astype('float32'), 1)
+
+        best_match = self.vector_db['products'][indices[0][0]]
+        confidence = 1 / (1 + distances[0][0])
+
+        return f"{best_match['brand']} {best_match['flavor']}", confidence
+
+    def sql_classify(self, ocr_text):
         # Search for matching brands
         self.cursor.execute("""
             SELECT b.name, COUNT(*) as match_count
