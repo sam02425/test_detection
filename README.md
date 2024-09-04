@@ -83,37 +83,6 @@ python main.py
 
 
 Graph Description:
-[Input Source]
-    |
-    v
-[Frame Extraction]
-    |
-    |------------------> [YOLO Model] ---> [Object Detections]
-    |                                           |
-    |------------------> [OCR Model] ---> [Text Detections]
-    |                         |
-    |                         v
-    |                  [BERT Model] ---> [Improved Text Detections]
-    |                                           |
-    |                                           |
-    |                                           v
-    |                                   [Product Matcher]
-    |                                           |
-    |                                           v
-    |                                   [Database Lookup]
-    |                                           |
-    |                                           v
-    |                               [Confidence Calculation]
-    |                                           |
-    |                                           v
-    |                           [Final Product Identification]
-    |                                           |
-    v                                           |
-[Display Results] <----------------------------
-
-## Graph Description:
-
-![Graph](https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e)
 
 <!-- Resize the image using HTML -->
 <img src="https://github.com/user-attachments/assets/e615117b-c72f-48c4-88e7-d5bbc8c39f4e" alt="graph" width="400"/>
