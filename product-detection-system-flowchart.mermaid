@@ -1,0 +1,41 @@
+graph TD
+    A[Start] --> B[Initialize ProductDetectionSystem]
+    B --> C[Load YOLO Model]
+    B --> D[Initialize OCRProcessor]
+    B --> E[Initialize ImprovedProductMatcher]
+    
+    F[Process Frame] --> G{YOLO Detection}
+    G --> H[Detect Objects]
+    H --> I[For each detected object]
+    I --> J[Extract bounding box]
+    J --> K[Get class name]
+    K --> L[Match product with ImprovedProductMatcher]
+    L --> M[Add to YOLO detections]
+    
+    F --> N{OCR Detection}
+    N --> O[Perform OCR]
+    O --> P[For each OCR result]
+    P --> Q[Check confidence > threshold]
+    Q --> R[Match product with ImprovedProductMatcher]
+    R --> S[Add to OCR detections]
+    
+    M --> T[Combine YOLO and OCR detections]
+    S --> T
+    
+    T --> U[Draw bounding boxes and labels]
+    
+    V[Get Final Product] --> W[Aggregate detection scores]
+    W --> X[Calculate average confidence]
+    X --> Y{Confidence > threshold?}
+    Y -->|Yes| Z[Return best product]
+    Y -->|No| AA[Return 'Low confidence detection']
+    
+    subgraph ImprovedProductMatcher
+        AB[Match Product] --> AC[Vector DB search]
+        AC --> AD[Return matched product and confidence]
+    end
+    
+    subgraph OCRProcessor
+        AE[Perform OCR] --> AF[Process image]
+        AF --> AG[Return text, bounding box, and confidence]
+    end

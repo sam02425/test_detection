@@ -1,0 +1,54 @@
+{
+  "YOLOv8+OCR+BERT+VectorDB": {
+    "evaluation": {
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 389,
+      "precision": 0,
+      "recall": 0,
+      "f1_score": 0,
+      "total_detections": 0,
+      "average_confidence": 0
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8+OCR+BERT+VectorDB_processed_video_20240906_013832.mp4"
+  },
+  "YOLOv8+OCR+BERT+DB": {
+    "evaluation": {
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 389,
+      "precision": 0,
+      "recall": 0,
+      "f1_score": 0,
+      "total_detections": 0,
+      "average_confidence": 0
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8+OCR+BERT+DB_processed_video_20240906_013832.mp4"
+  },
+  "OCR+BERT": {
+    "evaluation": {
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 389,
+      "precision": 0,
+      "recall": 0,
+      "f1_score": 0,
+      "total_detections": 0,
+      "average_confidence": 0
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/OCR+BERT_processed_video_20240906_013832.mp4"
+  },
+  "YOLOv8": {
+    "evaluation": {
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 389,
+      "precision": 0,
+      "recall": 0,
+      "f1_score": 0,
+      "total_detections": 0,
+      "average_confidence": 0
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8_processed_video_20240906_013832.mp4"
+  }
+}

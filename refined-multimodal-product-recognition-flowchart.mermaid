@@ -1,0 +1,48 @@
+graph TD
+    subgraph Data Collection and Preprocessing
+        A[Start] --> B[Data Collection]
+        B --> |360° Images| C[Image Preprocessing]
+        B --> |Product Labels| D[Text Extraction OCR]
+        C --> E[Image Augmentation]
+        D --> F[Text Normalization]
+        E --> G[Dataset Creation]
+        F --> G
+    end
+
+    subgraph Model Development and Training
+        G --> H[YOLO Model Selection]
+        H --> I[Hyperparameter Tuning]
+        I --> J[Model Training]
+        J --> K{Validation}
+        K -->|Not Satisfied| I
+        K -->|Satisfied| L[Trained YOLO Model]
+    end
+
+    subgraph Multimodal Fusion
+        L --> M[Visual Feature Extraction]
+        G --> N[Text Feature Extraction]
+        M --> O[Feature Fusion]
+        N --> O
+        O --> P[Multimodal Classifier]
+    end
+
+    subgraph Evaluation and Deployment
+        P --> Q[Test Set Evaluation]
+        Q --> R[Performance Analysis]
+        R --> S{Meet Requirements?}
+        S -->|No| T[Model Refinement]
+        T --> I
+        S -->|Yes| U[Deploy Model]
+    end
+
+    style A fill:#f9d5e5,stroke:#333,stroke-width:2px
+    style G fill:#eeac99,stroke:#333,stroke-width:2px
+    style L fill:#e06377,stroke:#333,stroke-width:2px
+    style P fill:#5b9aa0,stroke:#333,stroke-width:2px
+    style U fill:#d6eaf8,stroke:#333,stroke-width:2px
+
+    classDef process fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    class B,C,D,E,F,H,I,J,M,N,O,Q,R,T process;
+
+    classDef decision fill:#ffe6e6,stroke:#333,stroke-width:1px;
+    class K,S decision;

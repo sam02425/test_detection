@@ -1,0 +1,54 @@
+{
+  "YOLOv8+OCR+BERT+VectorDB": {
+    "evaluation": {
+      "true_positives": 24,
+      "false_positives": 13,
+      "false_negatives": 365,
+      "precision": 0.6486486486486487,
+      "recall": 0.061696658097686374,
+      "f1_score": 0.11267605633802819,
+      "total_detections": 37,
+      "average_confidence": 0.9188427932842358
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8+OCR+BERT+VectorDB_processed_video_20240906_030933.mp4"
+  },
+  "YOLOv8+OCR+BERT+DB": {
+    "evaluation": {
+      "true_positives": 24,
+      "false_positives": 13,
+      "false_negatives": 365,
+      "precision": 0.6486486486486487,
+      "recall": 0.061696658097686374,
+      "f1_score": 0.11267605633802819,
+      "total_detections": 37,
+      "average_confidence": 0.9188427932842358
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8+OCR+BERT+DB_processed_video_20240906_030933.mp4"
+  },
+  "OCR+BERT": {
+    "evaluation": {
+      "true_positives": 0,
+      "false_positives": 13,
+      "false_negatives": 389,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0,
+      "total_detections": 13,
+      "average_confidence": 0.9061538461538461
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/OCR+BERT_processed_video_20240906_030933.mp4"
+  },
+  "YOLOv8": {
+    "evaluation": {
+      "true_positives": 24,
+      "false_positives": 0,
+      "false_negatives": 365,
+      "precision": 1.0,
+      "recall": 0.061696658097686374,
+      "f1_score": 0.1162227602905569,
+      "total_detections": 24,
+      "average_confidence": 0.9257159729798635
+    },
+    "output_video": "/Users/saumil/Desktop/yolov8+ocr/test_detection/test_detection/results/YOLOv8_processed_video_20240906_030933.mp4"
+  }
+}

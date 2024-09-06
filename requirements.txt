@@ -6,3 +6,7 @@ transformers
 torch
 faiss-cpu
 sentence-transformers
+pyyaml
+psutil
+fuzzywuzzy
+python-Levenshtein
