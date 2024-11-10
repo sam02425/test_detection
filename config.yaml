@@ -1,0 +1,110 @@
+
+# Content of config.yaml
+fine_tuned_trocr_model: "microsoft/trocr-base-handwritten"
+trocr_model_path: "microsoft/trocr-base-handwritten"
+yolo_model: "models/best.pt"
+ppocr_model_path: "models/ppocr_model"
+ocr_threshold: 0.3
+product_match_threshold: 0.5
+similarity_threshold: 0.7
+use_ocr: true
+use_bert: true
+use_vector_db: true
+db_path: "data/product_database.db"
+test_data: "test/images"
+ground_truth: "test/labels"
+class_names_yaml: 'test/data.yaml'
+output_dir: "results"
+
+yolo_only:
+  use_yolo: true
+  use_trocr: false
+  use_ppocr: false
+  use_bert: false
+  use_vector_db: false
+
+ocr_bert_vector:
+  use_yolo: false
+  use_trocr: true
+  use_ppocr: true
+  use_bert: true
+  use_vector_db: true
+
+yolo_ocr_bert_vector:
+  use_yolo: true
+  use_trocr: true
+  use_ppocr: true
+  use_bert: true
+  use_vector_db: true
+
+# Class names
+class_names:
+  - BargsBlack20Oz
+  - BuenoShareSize
+  - CheetosCrunchy
+  - CheetosCrunchyFlaminHot
+  - CheetosCrunchyFlaminHotLimon
+  - CheetosCrunchyXXTRAFlaminHot
+  - CheetosCrunchyXXTRAFlaminHotLimon
+  - CheetosPuffs
+  - CherryCocaCola20Oz
+  - CherryVanillaCocaCola20Oz
+  - ChipsAhoy
+  - ChipsAhoyKingSize
+  - CocaCola16Oz
+  - CocaCola20Oz
+  - CocaCola350Ml
+  - CocaColaSpiced20Oz
+  - CocaColaZero16Oz
+  - Crunch
+  - Crush16Oz
+  - DietCocaCola20Oz
+  - DietCokeCan16Oz
+  - DoritosCoolRanch
+  - DoritosFlaminHotCoolRanch
+  - DoritosNachoCheese
+  - DoritosSpicyNacho
+  - DrPapPepper1L
+  - DrPapPepper20Oz
+  - DrPapPepperCan16Oz
+  - Fanta20Oz
+  - FantaCan16Oz
+  - FantaGrape20Oz
+  - FantaZero20Oz
+  - FunyunsOnionFlavoredRingsFlaminHot
+  - LaysBarbecue
+  - LaysClassic
+  - LaysLimon
+  - LennyLarrysBirthdayCake
+  - LennyLarrysChocolateChips
+  - LennyLarrysDoubleChocolateChips
+  - LennyLarrysPeanutButter
+  - LennyLarrysPeanutButterChocolateChips
+  - LennyLarrysSnickerdoodle
+  - MinuteMaidBlueRaspberry20Oz
+  - MinuteMaidFruitPunch
+  - MinuteMaidLemonade20Oz
+  - MinuteMaidPinkLemonade
+  - MountainDew16Oz
+  - MtnDew16Oz
+  - NerdsShareSize
+  - Oreo
+  - OreoDoubleStufKingSize
+  - OreoKingSize
+  - PaydayShareSize
+  - SkittlesShareSize
+  - SmartfoodWhiteCheddar
+  - SourPunchShareSize
+  - Sprite20Oz
+  - Sprite40Oz
+  - SpriteCan16Oz
+  - SpriteCherry20Oz
+  - SpriteTropicalMix20Oz
+  - SpriteZero20Oz
+  - SunChipsHarvestCheddar
+  - VanillaCocaCola20Oz
+  - WhatchamacallitKingSize
+  - ZeroCocaCola16Oz
+
+# Logging
+log_level: INFO
