@@ -1,0 +1,1 @@
+{"product": "Cheetos-crunchy-XXTRA-Flamin-Hot", "confidence": 1.0, "ocr_results": {"trocr": [{"text": "spy", "chars": ["s", "p", "y"], "bounding_box": [115, 167, 622, 638]}], "ppocr": []}, "yolo_detections": ["Cheetos-crunchy-XXTRA-Flamin-Hot"], "additional_info": {}}

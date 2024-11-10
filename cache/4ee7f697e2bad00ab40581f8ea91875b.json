@@ -1,0 +1,1 @@
+{"product": "Cheetos-crunchy-XXTRA-Flamin-Hot", "confidence": 0.8, "ocr_results": {"trocr": [{"text": "Lutherton", "chars": ["L", "u", "t", "h", "e", "r", "t", "o", "n"], "bounding_box": [27, 73, 559, 499]}], "ppocr": []}, "yolo_detections": ["Cheetos-crunchy-XXTRA-Flamin-Hot"], "additional_info": {}}

@@ -1,0 +1,1 @@
+{"product": "Bueno  ShareSize", "confidence": 0.005366015898590684, "ocr_results": {"trocr": [{"text": "2 1", "chars": ["2", " ", "1"], "bounding_box": [91, 141, 607, 585]}], "ppocr": [], "yolo": [{"text": "Cheetos-crunchy-XXTRA-Flamin-Hot", "confidence": 1.0, "bounding_box": [0, 0, 640, 640]}]}, "yolo_detections": ["Cheetos-crunchy-XXTRA-Flamin-Hot"], "additional_info": {}}
